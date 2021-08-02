@@ -445,7 +445,7 @@ function resolveRelations(row, headers, relations, foreignKey) {
   for (const [field, refField] of fields) {
     if (field && refField) {
       values[refField] = keyedRow.get(field)
-      if (keyedRow.get(field) !== null) {
+      if (keyedRow.has(field)) {
         valid = false
       }
     }
